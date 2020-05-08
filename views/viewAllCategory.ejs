@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <!-- N a v b a r    -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Password Category
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/Add-category">Add new Category</a>
+                    <a class="dropdown-item" href="/view-all-category">View all Category</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Password Details
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/Add-password">Add new password</a>
+                    <a class="dropdown-item" href="/view-all-password">View all password</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                    <% if (loginUser) {%>
+                        <a href="/logout"> Logout </a> &nbsp; &nbsp; &nbsp;
+                        <span style="color: white;"> login As:
+                     <%=loginUser%>
+                     <% } %>
+                </span>
+            </form>
+            </div>
+          </nav>
+      <!--   n a v b a r   e n d      -->
+
+      <h1>Welcome to <%= title %></h1>
+    <br>  <br>
+
+    
+    <table class="table table-hover mx-auto" style="max-width: 900px">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Edit </th>
+          <th scope="col">Remove </th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        <% if (record.length > 0 ){    %>  
+        <% record.forEach(function(record){    %>  
+            <tr>
+              <td>  <%= record.password_categoriesName  %>  </td>
+              <td> <a class="btn btn-xs" href="/view-all-category/edit/<%= record._id %>"><i class="fa fa-edit"></i></a></td>
+              <td> <a class="btn btn-xs" href="/view-all-category/remove/<%= record._id %>"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <%  })  %>
+            <%  } else { %>
+                <td> <strong> There is no category, add some. </strong> </td>
+            <%  }  %>
+
+      </tbody>
+    </table>
+ 
+</body>
+</html>

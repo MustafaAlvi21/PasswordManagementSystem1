@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+      <style>
+    </style>
+    
+    <!-- ----------------------------   hehehe   -------------------------------------------- -->
+    <body style="background-color:rgb(239, 239, 246);">
+      <header style="    background-color: white;">
+        <div class="row mx-auto a3">
+          <div class="col-lg-4 a3_1" style="border: steelblue;">
+          <center>
+            <h1>home</h1>
+          </center>
+          </div>
+          <div class="col-lg-4 a3_1" style="border:  blue;">
+            <div class="row mx-auto">   
+            <div class="col" id="userImage" style="margin: 0px auto; ">
+              <center>
+                <img src="/images/user-transparent.png" alt="img" style="max-width: 100px; max-height: 80px;">
+                
+                <% if (loginUser) {%>
+                    <p>login As: <%=loginUser%></p>
+                <% } else { %>
+                        <p>username</p>
+                <% } %>
+              </center>
+            </div>
+          </div>
+        </div>
+         
+          <div class="col-lg-4 a3_1" style="border: red;">
+            <center>
+              <span class="span1">
+              <% if (loginUser) {%>
+               <h4> <a href="/logout"> Logout </a> &nbsp; &nbsp; &nbsp; </h4>
+                <span style="color: white;"> login As: <%=loginUser%>
+             <% }  else { %>
+              <h4> <a href="/signup"> Register </a> &nbsp; <a href="/login"> Login </a> </h4>
+              <%  }  %>
+            </span>
+            </span>
+            </center>
+        </div>
+        </div>
+      </header>        
+    <!-- -------------------------------------------- -->
+    <div class="container123" style=" width: 100%; box-shadow: 05px  rgb(100, 100, 100);">
+      <img src="\images\key.jpg" alt="Snow" style="width:100%"  class="mx-auto">
+      <div class=" a1">
+        <h2 style="color: rgb(100, 100, 100);">Secure Password Manager</h2>
+        <h4 style="color: rgb(100, 100, 100);"> Solve poor password habits easily and quickly, so you can secure every account with one, simple login.</h4>
+        <% if (!loginUser) {%>
+        <a href="/signup"> <button type="button" class="btn btn-outline-secondary" style="width: 200px; font-weight: 500;">Get started</button> </a>
+          <%}  else {%>
+            <a href="/Add-password"> <button type="button" class="btn btn-outline-secondary" style="width: 200px; font-weight: 500;">Add Details</button> </a>
+            <%}%>
+      </div>
+    </div>
+    <br>   <br>    <br> <br>
+    <div class="row mx-auto">
+      <div class="col-lg-6" style="padding: 1px 50px;">
+        <h1>What is a password manager?</h1>
+        <h4>  At home and work, you have more online accounts that you can possibly remember. And since 81% of breaches are caused by weak or reused passwords, it’s essential that each account have a unique password. So how are you supposed to remember these strong, unique passwords? You can’t. But a password manager can.  </h4>
+        <h4>A password manager is a tool that does the work of creating, remembering and filling in passwords. Simply log into an online account for the first time and LastPass will store your username and password so every time you go back your credentials will be filled in automatically.</h4>
+      </div>
+      <div class="col-lg-6">
+        <img src="\images\registration.jpg" alt="registration.jpg" class="col-lg-12" style="border-radius: 30px;">
+      </div>
+    </div>
+    
+    <div class="row mx-auto">
+      <div class="row mx-auto" style="width: 100%; margin: 30px 0px;">
+       <div class="col-lg-2 col-md-1"></div>
+       <div class="col">        
+        <center><h1>More than just passwords</h1></center>
+       </div>
+       <div class="col-lg-2 col-md-1"></div>
+      </div>
+     <br> <br>
+      <div class="col-lg-6"  style=" padding: 1px 80px;">
+        <center>
+        <i class='fas fa-folder-open' style='font-size:48px;color:gray;'></i>  <br>
+      
+        <h2>Store personal Information</h2>
+        <h4>Consider your most valuable documents – passport, credit cards, social security, etc. With LastPass, you can create a Secure Note for each and store all the relevant information.</h4>
+      </center>
+    </div>
+      <div class="col-lg-6"  style="padding: 1px 80px;">
+        <center>
+        <span class="glyphicon glyphicon-share" style='font-size:48px;color:gray;'>hello</span> <br>
+        <h2>Share passwords</h2>
+        <h4>If others need access to your accounts, share login information securely though LastPass either with your team at work or with your family at home. </h4>
+      </center>
+    </div>
+    </div>
+<br>  <br>  <br> 
+    <div class="row mx-auto">
+      <div class="row mx-auto" style=" width: 100%;"> 
+        <div class="col-lg-4 col-md-1"></div>
+        <div class="col">
+        <h1>Lets save your details...</h1>
+      </div>
+        <div class="col-lg-3 col-md-1"></div>
+      </div>
+      <div class="row  mx-auto" style="width: 100%;">
+        <div class="col-lg-4 col-md-1"></div>
+        <div class="col">
+          <ol>
+         <p><li style="font-size: large;">Access anytime anywhere.</li></p>
+         <p><li style="font-size: large;">Save passwords securely.</li></p>
+         <p><li style="font-size: large;">Save emails of varity of accounts.</li></p>
+         <p><li style="font-size: large;">Save recovery emails of varity of accounts.</li></p>
+         <p><li style="font-size: large;">Save details of your accounts.</li></p> </ol>
+        </div>
+        <div class="col-lg-4 col-md-1"></div>
+    </div>
+    </div>
+      <!-- ------------------------------------------------------------------ -->
+    <div class="page-wrapper chiller-theme toggled" style="height: auto;">
+      <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <!-- sidebar-search  -->
+          <div class="sidebar-menu">
+            <ul>
+              <li class="header-menu">
+                <div id="close-sidebar">
+                  <br>
+                  <div class="row mx-auto">
+                  <div class="col">General</div><div class="col"></div> <div class="col"><p  style="float: right;"><i class="fas fa-times"></i></p> </div>
+                </div>
+              </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="/">
+                  <i class="fa fa-tachometer-alt"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="/dashboard">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="far fa-gem"></i>
+                  <span>Details Section</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/Add-password">Add Details</a>
+                    </li>
+                    <li>
+                      <a href="/view-all-password">Update Details</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-chart-line"></i>
+                  <span>About us</span>
+                </a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="fa fa-globe"></i>
+                  <span>Your Location</span>
+                </a>
+              </li>
+              <li class="header-menu">
+                <span>Extra</span>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-book"></i>
+                  <span>Documentation</span>
+                  <span class="badge badge-pill badge-primary">Beta</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-calendar"></i>
+                  <span>Calendar</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-folder"></i>
+                  <span>Examples</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+          <a href="#">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-pill badge-warning notification">3</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-envelope"></i>
+            <span class="badge badge-pill badge-success notification">7</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-cog"></i>
+            <span class="badge-sonar"></span>
+          </a>
+          <a href="#">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
+      </nav>
+      <!-- main contents  -->
+      
+          <!--  s t a r t   o f   e d i t   c a t e g o r y    f o r m   -->
+          <!--    e n d   o f   f o r m    -->
+      <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+    <br>  <br>  
+    <br>  <br>  
+    <br>  <br>  
+    <br>  <br>  
+    <footer id="fh5co-footer" class="fh5co-bg" role="contentinfo">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row row-pb-md">
+            <div class="col-md-4 fh5co-widget">
+              <h3>A Little About Stamina.</h3>
+              <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+              <p><a class="btn btn-primary" href="#">Become A Member</a></p>
+            </div>
+            <div class="col-md-8">
+              <h3>Classes</h3>
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <ul class="fh5co-footer-links">
+                  <li><a href="#">Cardio</a></li>
+                  <li><a href="#">Body Building</a></li>
+                  <li><a href="#">Yoga</a></li>
+                  <li><a href="#">Boxing</a></li>
+                  <li><a href="#">Running</a></li>
+                </ul>
+              </div>
+    
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <ul class="fh5co-footer-links">
+                  <li><a href="#">Boxing</a></li>
+                  <li><a href="#">Martial Arts</a></li>
+                  <li><a href="#">Karate</a></li>
+                  <li><a href="#">Kungfu</a></li>
+                  <li><a href="#">Basketball</a></li>
+                </ul>
+              </div>
+    
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <ul class="fh5co-footer-links">
+                  <li><a href="#">Badminton</a></li>
+                  <li><a href="#">Body Building</a></li>
+                  <li><a href="#">Teams</a></li>
+                  <li><a href="#">Advertise</a></li>
+                  <li><a href="#">API</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row copyright">
+            <div class="col-md-12 text-center">
+              <p>
+                <small class="block">&copy; 2017 | All Rights Reserved.</small> 
+                <small class="block">Powered by  siteName.com</small>
+              </p>
+            </div>
+          </div>
+    
+        </div>
+      </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script>
+            jQuery(function ($) {
+    
+    $(".sidebar-dropdown > a").click(function() {
+    $(".sidebar-submenu").slideUp(200);
+    if (
+    $(this)
+      .parent()
+      .hasClass("active")
+    ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+    } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+    }
+    });
+    
+    $("#close-sidebar").click(function() {
+    $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function() {
+    $(".page-wrapper").addClass("toggled");
+    });
+    });
+  </script>
+</body>
+</html>

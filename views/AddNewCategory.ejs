@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <!-- N a v b a r    -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Password Category
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/Add-category">Add new Category</a>
+                    <a class="dropdown-item" href="/view-all-category">View all Category</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Password Details
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/Add-password">Add new password</a>
+                    <a class="dropdown-item" href="/view-all-password">View all password</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                    <% if (loginUser) {%>
+                        <a href="/logout"> Logout </a> &nbsp; &nbsp; &nbsp;
+                        <span style="color: white;"> login As:
+                     <%=loginUser%>
+                     <% } %>
+                </span>
+            </form>
+            </div>
+          </nav>
+      <!--   n a v b a r   e n d      -->
+<!--  s t a r t   o f   l o g i n   f o r m   -->
+    <div class="container col-lg-6">
+        <div class="row">
+          <div class="loginbox mx-auto col-lg-9 col-sm-7">
+            <div class="col-md-12 mb-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="panel-title"></div>
+            </div>
+            <% if(msg != ''){ %>
+              <% if(msg == 'Category exist in our data'){ %>
+              <div class="alert alert-danger alert-dismissible">
+                  <strong>      
+              <%= msg %>
+                  </strong>
+              </div>
+              <% } else{ %>
+                <div class="alert alert-success alert-dismissible">
+                  <strong>      
+              <%= msg %>
+                  </strong>
+              </div>
+                <% } %>
+            <% } %>
+            </div>
+          </div>
+            <form action="/Add-category" method="POST">
+                <div class="mb-3">
+                  <label for="validationServerUsername">Name of Category</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend3"><span class="glyphicon glyphicon-user"></span> </span>
+                    </div>
+                    <input type="text" class="form-control is-invalid" name="passwordCategory" id="validationServerUsername" placeholder="Category name" aria-describedby="inputGroupPrepend3" required>
+                    <div class="invalid-feedback">
+                      <!-- Please choose a username. -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit" value="Add categore">Add Categore</button>
+                </div>
+              </form>
+            
+          </div>
+          </div>
+        </div>
+          <!--    e n d   o f   f o r m    -->
+  </body>
+  </html>
+  
