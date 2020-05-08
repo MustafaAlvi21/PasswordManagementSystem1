@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-const port = process.env.port || 3000;
+const port = process.env.port;
 app.listen(port, ()=>{
     console.log('starting server at'+ port);
 });
