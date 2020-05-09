@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/Password_Management_System', {useNewUrlParser: true});
 var db = mongoose.connection;
 
+
 var password_categoriesSchema = new mongoose.Schema(
     {
         password_categoriesName: {type: String, required: true, index: { unique: true} },
