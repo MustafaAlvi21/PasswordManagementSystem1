@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/Password_Management_System', {useNewUrlParser: true, useCreateIndex: true});
-mongoose.connect('mongodb+srv://passwordManagementSystem:pms123@cluster0-objod.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
+mongoose.connect( process.env.MONGODB_URI  ||  'mongodb://localhost/Password_Management_System', {useNewUrlParser: true, useCreateIndex: true});
+// mongoose.connect('process.env.MONGODB_URI    ', {useNewUrlParser: true, useCreateIndex: true});
 var db = mongoose.connection;
 
 var userSchema = new mongoose.Schema(
